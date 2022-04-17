@@ -14,7 +14,21 @@
  *     }
  * }
  */
- //Approach 1: Recursive Approach
+//Approach 0: Recursive Approach
+
+class Solution {
+    ArrayList<Integer> result = new ArrayList<>();
+    public List<Integer> inorderTraversal(TreeNode root) {
+        if(root==null) return result;
+        
+        inorderTraversal(root.left);
+        result.add(root.val);
+        inorderTraversal(root.right);
+        return result;
+        
+    }
+}
+ //Approach 1: Recursive Approach with helper method
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();

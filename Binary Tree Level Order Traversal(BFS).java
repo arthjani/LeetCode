@@ -14,7 +14,7 @@
  * }
  */
 
-// BFS using Queue
+// Approach 1: BFS using Queue
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();

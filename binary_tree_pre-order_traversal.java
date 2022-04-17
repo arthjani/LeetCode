@@ -16,7 +16,7 @@
  */
 
 
-//Recursive method with List as returning value:
+//Approach 1: Recursive method with List as returning value:
 
 
 class Solution {
@@ -31,7 +31,7 @@ List<Integer> a=new ArrayList<Integer>();
     }
 }
 
-//Recursive method with Helper method to have a List as paramater, so we can modify the parameter and don't have to instantiate a new List at each recursive call:
+//Approach 2: Recursive method with helper method to have a List as paramater, so we can modify the parameter and don't have to instantiate a new List at each recursive call:
 	class solutin{
 	public List<Integer> preorderTraversal(TreeNode root) {
 		List<Integer> pre = new LinkedList<Integer>();
@@ -46,7 +46,7 @@ List<Integer> a=new ArrayList<Integer>();
 	}
 }
 
-//Iterative method with Stack:
+//Approach 3: Iterative method with Stack:
 class solution{
 	public List<Integer> preorderIt(TreeNode root) {
 		List<Integer> pre = new LinkedList<Integer>();

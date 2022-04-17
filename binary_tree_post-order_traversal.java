@@ -14,7 +14,7 @@
  * }
  */
 
-//Recursive
+//Approach 1: Recursive
 class Solution {
    List<Integer> result = new ArrayList<Integer>();
 public List<Integer> postorderTraversal(TreeNode root) {
@@ -28,8 +28,25 @@ public List<Integer> postorderTraversal(TreeNode root) {
     return result;
 }
 }
+//Approach 2: Recursive method with helper method
+class Solution {
+public List<Integer> postorderTraversal(TreeNode root) {
 
-// Iterative
+List<Integer> result = new LinkedList<Integer>();
+        postHelper(root,result);
+        return result;
+    }
+    public void postHelper(TreeNode root, List<Integer> result) {
+        if(root==null) return;
+        postHelper(root.left,result);
+        postHelper(root.right,result);
+        result.add(root.val);
+    }
+}
+
+
+
+//Approach 3: Iterative
 
 class Solution {
 
