@@ -24,7 +24,6 @@ public class Main{
      public static void solution(int[] arr){
      	int[] dp = new int[arr.length];
      	int oMax =0;
-     	int oMaxIndex=0;
      	for(int i=0;i<dp.length;i++){
      		int max=0;
      		for(int j=0;j<i;j++){
@@ -36,12 +35,17 @@ public class Main{
      		dp[i]=max+1;
      		if(dp[i]>oMax){
      			oMax=dp[i];
-     			oMaxIndex=i;
      		}
      	}
      	System.out.println(oMax);
+
      	ArrayDeque<Pair> queue = new ArrayDeque<>();
-        queue.offer(new Pair(oMax,oMaxIndex,arr[oMaxIndex],arr[oMaxIndex]+""));
+     	for(int i=0;i<dp.length;i++){
+     		if(oMax==dp[i]){
+     			queue.offer(new Pair(oMax,i,arr[i],arr[i]+""));
+     		}
+     	}
+        
 
         while(!queue.isEmpty()){
         	 Pair rem = queue.removeFirst(); 
